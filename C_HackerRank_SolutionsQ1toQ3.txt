@@ -1,0 +1,72 @@
+#1:Hello World!
+#2: Playing with Characters
+
+    char ch;
+    char s[10];
+    char se[50]; 
+    scanf("%c",&ch);
+    scanf("%s",&s);
+    scanf("\n");
+    scanf("%[^\n]%*c",se);
+    printf("%c",ch);
+    printf("%s\n",s);
+    printf("%se",se);
+
+#3:Sum and Differnces of Two Numbers
+
+int a,b;
+floar c,d;
+
+scanf("%d%d",&a,&b);
+scanf("%f%f",&c,&d);
+
+printf("%d %d\n",a+b,a-b);
+printf("%0.1f %0.1f",c+d,c-d);
+
+#4: Function in C 
+
+
+if(a>b && a>c && a>d)
+{
+	return a;
+
+}
+else if(b>c && b>d) 
+{
+	return b;
+}
+else if(c>d)
+{
+	return c;
+}    
+else 
+{
+	return d;
+}
+
+#4: Pointers in C: 
+#include <stdio.h>
+
+void update(int *a,int *b) {
+    // Complete this function    
+    int addition,subtraction;
+    addition = *a+*b;
+    subtraction = *a-*b;
+    if(subtraction < 0)
+    {
+        subtraction = -subtraction;
+    }
+    *a = addition;
+    *b = subtraction;
+}
+
+int main() {
+    int a, b;
+    int *pa = &a, *pb = &b;
+    
+    scanf("%d %d", &a, &b);
+    update(pa, pb);
+    printf("%d\n%d", a, b);
+
+    return 0;
+}
