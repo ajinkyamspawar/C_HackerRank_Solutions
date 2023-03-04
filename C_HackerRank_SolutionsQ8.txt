@@ -1,0 +1,49 @@
+Q8: Bitwise Operator 
+
+
+
+
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+//Complete the following function.. 
+int main() {
+    int n, k, i, j, max_and =0, max_or = 0, max_xor = 0; //our values are always going to be positive hence initilized at 0
+  
+    scanf("%d %d", &n, &k);	// n's value is made stable for looping
+    
+        for(i = 1; i<=n; i++) 	//Asked j's value is one more than i
+        {
+            for(j = i+1; j<=n; j++)
+            {
+                if((i&j)>max_and&&(i&j)<k)
+                max_and = i&j; //if bigger i&j's value is occured then it needs to be stored
+                
+                if((i|j)>max_or&&(i|j)<k)
+                max_or = i|j;
+                
+                if((i^j)>max_xor&&(i^j)<k)
+                max_xor = i^j;
+                
+            }        
+        }
+        printf("%d\n%d\n%d",max_and,max_or,max_xor);
+        
+return 0; 
+/*The main function is generally supposed to return a value and after it returns something it finishes execution. 
+	The return 0 means success and returning a non-zero number means failure. 
+	Thus we "return 0" at the end of main function.*/
+	
+}
+
+/*A runtime error occurs when a program is syntactically correct but contains an issue that is only detected during program execution. 
+These issues cannot be caught at compile-time by the Java compiler and are only detected by 
+the Java Virtual Machine (JVM) when the application is running.*/
+    
+
+
+
+
+
+
